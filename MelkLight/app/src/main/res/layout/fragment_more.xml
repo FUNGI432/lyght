@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Mic reactive -->
+        <TextView style="@style/SectionTitle" android:text="@string/section_mic" android:paddingTop="4dp" />
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/micSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_primary"
+            android:text="@string/label_mic_enabled" />
+
+        <TextView style="@style/SliderLabel" android:text="@string/label_sensitivity" android:paddingTop="14dp" android:paddingBottom="2dp" />
+        <SeekBar android:id="@+id/micSensitivitySeek" style="@style/PlainSlider" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/micEqChipGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:singleSelection="true"
+            app:chipSpacingHorizontal="8dp" />
+
+        <View style="@style/Divider" />
+
+        <!-- Pin remap -->
+        <TextView style="@style/SectionTitle" android:text="@string/section_pin_remap" />
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/pinChipGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleSelection="true"
+            app:chipSpacingHorizontal="8dp" />
+
+        <View style="@style/Divider" />
+
+        <!-- Timer -->
+        <TextView style="@style/SectionTitle" android:text="@string/section_timer" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/syncTimeButton"
+            style="@style/ModeToggleButton"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/action_sync_time"
+            android:layout_marginBottom="12dp" />
+
+        <TimePicker
+            android:id="@+id/scheduleTimePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:timePickerMode="spinner" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/weekdayChipGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            app:singleSelection="false"
+            app:chipSpacingHorizontal="6dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/setScheduleButton"
+            style="@style/ModeToggleButton"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/action_set_schedule"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="32dp" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

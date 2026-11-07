@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LYGHT</string>
+    <string name="status_disconnected">No device paired</string>
+    <string name="status_connecting">Connecting…</string>
+    <string name="status_connected">Connected: %1$s</string>
+    <string name="action_scan">Scan</string>
+    <string name="action_sync_time">Sync device clock</string>
+    <string name="action_set_schedule">Set schedule</string>
+    <string name="label_power">Power</string>
+    <string name="label_warm">Warm white</string>
+    <string name="label_cold">Cold white</string>
+    <string name="label_speed">Speed</string>
+    <string name="label_sensitivity">Sensitivity</string>
+    <string name="label_mic_enabled">Enabled</string>
+    <string name="section_color">Color</string>
+    <string name="section_brightness">Brightness</string>
+    <string name="section_white">White</string>
+    <string name="section_effects">Effects</string>
+    <string name="section_mic">Mic reactive</string>
+    <string name="section_pin_remap">RGB pin remap</string>
+    <string name="section_timer">Timer</string>
+    <string name="ble_toast_title">LYGHT</string>
+    <string name="ble_toast_text">Talking to your light…</string>
+    <string name="ble_channel_name">Light control</string>
+    <string name="tile_power_label">Light power</string>
+    <string name="widget_no_device">Open app to pair a light</string>
+    <string name="scanning_title">Scanning for MELK- devices…</string>
+    <string name="no_devices_found">No devices found. Make sure the light is powered and Bluetooth is on.</string>
+    <string name="mode_color">Color</string>
+    <string name="mode_white">White</string>
+    <string name="label_hue">Hue</string>
+    <string name="label_saturation">Saturation</string>
+    <string name="action_add_device">+ Add light</string>
+    <string name="tab_effects">Effects</string>
+    <string name="tab_more">More</string>
+    <string name="label_scene">Scene</string>
+    <string name="action_remove_device">Remove this light?</string>
+</resources>

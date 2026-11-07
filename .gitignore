@@ -1,0 +1,23 @@
+# Third-party reverse-engineering artifacts - not our code, not for publishing
+/decompiled/
+/apk_extracted/
+/tools/
+*.apk
+
+# Local scratch screenshots from development/testing
+/screenshot_*.png
+
+# Android / Gradle
+MelkLight/local.properties
+MelkLight/.gradle/
+MelkLight/build/
+MelkLight/app/build/
+MelkLight/.idea/
+MelkLight/*.iml
+MelkLight/.kotlin/
+MelkLight/captures/
+MelkLight/.cxx/
+
+# OS
+.DS_Store
+Thumbs.db
