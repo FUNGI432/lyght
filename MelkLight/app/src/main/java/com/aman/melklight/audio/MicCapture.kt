@@ -21,6 +21,7 @@ class MicCapture {
 
     private val running = AtomicBoolean(false)
     private var record: AudioRecord? = null
+    private var captureThread: Thread? = null
 
     fun isRunning() = running.get()
 
@@ -41,7 +42,7 @@ class MicCapture {
         record = rec
         running.set(true)
         rec.startRecording()
-        thread(name = "mic-capture", isDaemon = true) {
+        captureThread = thread(name = "mic-capture", isDaemon = true) {
             val buffer = ShortArray(bufSize)
             while (running.get()) {
                 val read = rec.read(buffer, 0, buffer.size)
@@ -59,14 +60,20 @@ class MicCapture {
 
     fun stop() {
         running.set(false)
-        record?.apply {
-            try {
-                stop()
-            } catch (_: Exception) {
-            }
-            release()
-        }
+        val rec = record
         record = null
+        // AudioRecord.stop() unblocks a pending read() in the capture thread,
+        // so join it before release() to avoid release-while-reading crashes.
+        try {
+            rec?.stop()
+        } catch (_: Exception) {
+        }
+        try {
+            captureThread?.join(200)
+        } catch (_: InterruptedException) {
+        }
+        captureThread = null
+        rec?.release()
         level = 0f
     }
 }
