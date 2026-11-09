@@ -13,6 +13,16 @@ object LedState {
     var connectionState: ConnectionState = ConnectionState.DISCONNECTED
         private set
 
+    /** The hero color picker's current RGB, kept live so audio-reactive mode
+     * follows it instead of freezing at whatever it was when enabled. */
+    @Volatile
+    var baseColor: Triple<Int, Int, Int> = Triple(255, 255, 255)
+        private set
+
+    fun updateBaseColor(r: Int, g: Int, b: Int) {
+        baseColor = Triple(r, g, b)
+    }
+
     private var appContext: Context? = null
     private val mainHandler = Handler(Looper.getMainLooper())
     private val listeners = mutableListOf<(ConnectionState) -> Unit>()

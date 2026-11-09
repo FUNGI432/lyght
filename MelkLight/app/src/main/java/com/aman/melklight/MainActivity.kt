@@ -211,6 +211,8 @@ class MainActivity : AppCompatActivity() {
 
         setupSwatches()
         updateColorPreview()
+        val initial = Color.HSVToColor(floatArrayOf(hue, saturation, 1f))
+        LedState.updateBaseColor(Color.red(initial), Color.green(initial), Color.blue(initial))
     }
 
     private fun setupSwatches() {
@@ -300,6 +302,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun sendColor() {
         val color = Color.HSVToColor(floatArrayOf(hue, saturation, 1f))
+        LedState.updateBaseColor(Color.red(color), Color.green(color), Color.blue(color))
         Commander.send(this, Protocol.color(Color.red(color), Color.green(color), Color.blue(color)))
     }
 

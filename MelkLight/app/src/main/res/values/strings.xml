@@ -18,6 +18,10 @@
     <string name="section_white">White</string>
     <string name="section_effects">Effects</string>
     <string name="section_mic">Mic reactive</string>
+    <string name="section_audio_reactive">Phone audio reactive</string>
+    <string name="label_audio_listen">Listen with phone mic</string>
+    <string name="label_audio_drive">Drive the light</string>
+    <string name="label_gain">Gain</string>
     <string name="section_pin_remap">RGB pin remap</string>
     <string name="section_timer">Timer</string>
     <string name="ble_toast_title">LYGHT</string>
