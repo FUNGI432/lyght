@@ -33,6 +33,49 @@
 
         <View style="@style/Divider" />
 
+        <!-- Phone audio reactive -->
+        <TextView style="@style/SectionTitle" android:text="@string/section_audio_reactive" />
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/audioListenSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_primary"
+            android:text="@string/label_audio_listen" />
+
+        <TextView style="@style/SliderLabel" android:text="@string/label_gain" android:paddingTop="14dp" android:paddingBottom="2dp" />
+        <SeekBar android:id="@+id/audioGainSeek" style="@style/PlainSlider" android:progress="30" />
+
+        <ProgressBar
+            android:id="@+id/audioMeter"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="12dp"
+            android:progressTint="@color/accent"
+            android:progressBackgroundTint="@color/surface_alt"
+            android:max="100"
+            android:progress="0"
+            android:indeterminate="false" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/audioDriveSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:enabled="false"
+            android:textColor="@color/text_primary"
+            android:text="@string/label_audio_drive" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/audioPatternChipGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:singleSelection="true"
+            app:chipSpacingHorizontal="8dp" />
+
+        <View style="@style/Divider" />
+
         <!-- Pin remap -->
         <TextView style="@style/SectionTitle" android:text="@string/section_pin_remap" />
         <com.google.android.material.chip.ChipGroup

@@ -29,7 +29,18 @@ Debug APK: `MelkLight-debug.apk` (5.8MB, vs. the original app's 34.9MB).
   brightness, warm/cold white
 - All 241 built-in effect modes and 28 scenes from the original app (exact names +
   command codes, pulled straight from its resources)
-- Music/mic-reactive mode (on/off, sensitivity, EQ mode)
+- Music/mic-reactive mode (on/off, sensitivity, EQ mode) - this is the light's own
+  onboard mic, armed with a one-shot command; it then runs fully on its own with no
+  further data from the phone (confirmed from the decompiled app - see PROTOCOL.md)
+- **Phone audio reactive** (More tab): captures the phone's own microphone and drives
+  the light's color/brightness from it in real time, independent of the onboard mic
+  above. Same 8 named patterns as [LYGHT for PC](LyghtDesktop) (Energic/Rhythm/
+  Spectrum/Rolling x2, our own software implementations - the device's internal EQ
+  algorithms for those names aren't reachable from outside at all), a gain slider, and
+  a live level meter. No system/app-audio option here (unlike the PC app's WASAPI
+  loopback) - Android has no equivalent without a per-session MediaProjection consent
+  dialog and a dedicated foreground-service type, which wasn't worth the complexity
+  against this already covering the "the onboard mic isn't trustworthy" complaint.
 - RGB pin remap (for miswired strips)
 - Device clock sync + on/off schedule
 
